@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Email</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        <h3>{{ request.user }}</h3>
+        <a href="{% url 'core:send-email' %}">Send email here</a>
+        <a href="{% url 'core:logout' %}">logout</a>
+    {% else %}
+        <a href="{% url 'core:register' %}">Sign Up</a>
+        <a href="{% url 'core:login' %}">Login</a>
+    {% endif %}
+</body>
+</html>
